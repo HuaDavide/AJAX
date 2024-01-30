@@ -20,15 +20,25 @@
             return;
         }
         xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
+        xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("txtHint").innerHTML = this.responseText;
+                var parole_json = this.responseText;
+                var parole = JSON.parse(parole_json);
+
+                var html = "<ul>";
+                parole.forEach(function (parola) {
+                    html += "<li>" + parola + "</li>";
+                })
+                html += "</ul>";
+
+                document.getElementById("txtHint").innerHTML = html;
             }
         };
-        xhttp.open("GET", "getParole.php?parola="+str, true);
+        xhttp.open("GET", "search.php?parola=" + str, true);
         xhttp.send();
     }
 </script>
 
 </body>
 </html>
+
