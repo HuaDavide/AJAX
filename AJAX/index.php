@@ -34,7 +34,7 @@
                 document.getElementById("txtHint").innerHTML = html;
             }
         };
-        xhttp.open("GET", "search.php?parola=" + str, true);
+        xhttp.open("GET", "getParole.php?parola=" + str, true);
         xhttp.send();
     }
 </script>
