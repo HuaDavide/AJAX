@@ -1,7 +1,7 @@
 <?php
 $parola = $_GET["parola"];
 
-$pdo = new PDO('mysql:host=sql11.freemysqlhosting.net;dbname=sql11679361', "sql11679361", "Vi5p2tQ1mP");
+$pdo = new PDO('mysql:host=192.168.2.200;dbname=hua_davide_', "hua_davide", "autobiographical.celluloid.meatloafs.");
 
 $query = "SELECT * FROM parole WHERE parola LIKE '$parola%' ";
 $stmt = $pdo->prepare($query);
